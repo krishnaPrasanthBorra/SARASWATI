@@ -1,104 +1,45 @@
-# EmotionLearn - Neuroadaptive Learning Platform
+# Student State Detection - Streamlit Demo
 
-EmotionLearn is an innovative educational platform that detects and responds to student emotions and learning states in real-time, providing a personalized learning experience.
+This project demonstrates a student state detection system that identifies three different student states:
 
-## The Story Behind EmotionLearn
+1. **Restlessness**: Detected when a student moves their mouse cursor rapidly for more than 2 seconds
+2. **Confusion**: Detected when a student frequently changes answers in multiple-choice questions
+3. **Boredom**: Detected when there's no activity for a certain period
 
-Three students - Aisha, Miguel, and Sarah - all share a passion for physics, but their learning styles couldn't be more different. Aisha absorbs information best through auditory learning, preferring lectures and voice explanations. Miguel is a visual learner who thrives when concepts are presented through diagrams and animations. Sarah excels when reading detailed theoretical explanations at her own pace.
+## Requirements
 
-Traditional education would force them all into the same learning approach. EmotionLearn changes this paradigm by adapting to each student's emotional state and learning preferences, allowing them to learn physics in ways that work best for them individually.
+- Python 3.7+
+- Streamlit 1.16.0+
 
-## Features
-
-### 1. Voice Call Integration
-
-- Audio explanations for auditory learners
-- Voice-based navigation through learning materials
-- Verbal feedback based on detected emotions
-
-### 2. Student State and Emotion Detection
-
-The application uses webcam-based emotion detection to track three key student states:
-
-- **Restlessness**: Detected when rapid cursor movements occur for more than 5 seconds
-  - *When detected*: The system displays a "Restlessness Detected" message and offers suggestions to refocus
-  
-- **Confusion**: Triggered when a student frequently switches between multiple choice options (3+ changes within 5 seconds)
-  - *When detected*: The system highlights the confusing content and provides additional explanations
-  
-- **Boredom**: Identified after 10 seconds of inactivity
-  - *When detected*: The system introduces more engaging content or suggests a short break
-
-### 3. Interactive Quiz System
-
-- Modern Physics quiz with timed responses
-- Real-time emotion tracking during quiz completion
-- Automatic adaptation based on detected emotional states
-- Timer with visual warnings when time is running low
-
-### 4. Data Visualization Dashboard
-
-After completing a quiz, students can access:
-
-- Emotion distribution charts
-- State duration analytics
-- Quiz performance metrics
-- Personalized learning recommendations
-
-## How to Use the Application
-
-### Getting Started
+## Installation
 
 1. Clone this repository
-2. Navigate to the project directory
-3. Start the application:
+2. Install dependencies:
 
-   **To run the Landing page with full functionality:**
-   ```bash
-   cd landing
-   python server.py
-   ```
-   Then open the index.html file of "emotion" folder locally in the same browser page with "open with live server". 
-   This will open the EmotionLearn landing page at http://localhost:8002
-   Now all the servers are currently running. 
+```bash
+pip install -r requirements.txt
+```
 
-### Accessing Features
-Open the application in your browser (automatically opens at http://localhost:8000)
+## Running the App
 
-#### Voice Call Feature
+Run the Streamlit app with:
 
-1. Click on the audio icon in the navigation bar
-2. Select "Start Voice Explanation" for audio-based learning
-3. Use voice commands like "explain question 2" or "give me more details"
+```bash
+streamlit run app.py
+```
 
-#### Student State and Emotion Detection
+This will start the application and open it in your default web browser.
 
-1. Open the application in your browser (automatically opens at http://localhost:8000)
-2. Allow webcam access when prompted
-3. The system will automatically begin tracking your emotional states
-4. Your current states (restlessness, confusion, boredom) will be displayed at the top of the screen
+## How to Test
 
-#### Taking the Quiz
+- **Restlessness**: Move your mouse rapidly back and forth for more than 2 seconds
+- **Confusion**: Quickly change between different MCQ options multiple times within 3 seconds
+- **Boredom**: Don't interact with the page for 10 seconds
 
-1. The quiz automatically starts when you open the application
-2. Answer the multiple-choice questions about Modern Physics
-3. Watch the timer in the top-right corner
-4. Submit your answers using the "Submit Quiz" button or wait for the timer to expire
+## Technical Details
 
-#### Viewing Results and Visualizations
-
-1. After completing the quiz, you'll be automatically redirected to the results page
-2. Review your score and emotional state statistics
-3. Click "Visualize Results" to access the comprehensive data visualization dashboard
-4. Explore the various charts showing your emotional states and learning patterns
-
-## Technical Requirements
-
-- Modern web browser with JavaScript enabled
-- Webcam access
-- Microphone access (for voice features)
-- Local storage enabled
-
-## Privacy Note
-
-All emotion detection and analysis happens locally in your browser. No video or emotion data is sent to any server.
+The app uses:
+- Streamlit for the Python web framework
+- JavaScript for real-time mouse movement tracking
+- HTML/CSS for the quiz interface
+- Bidirectional communication between JavaScript and Python 
